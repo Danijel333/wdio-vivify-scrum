@@ -1,5 +1,5 @@
 class Page {
-  openUrl(path) {
+  async openUrl(path) {
     return browser.url(path);
   }
 }

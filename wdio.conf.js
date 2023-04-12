@@ -1,14 +1,14 @@
+// const ENV = process.env.ENV;
+// if (!ENV || !["qa", "dev", "staging"].includes(ENV)) {
+//   console.log(
+//     " Please use the following format when running the test script: ENV=qa|dev|staging"
+//   );
+//   process.exit();
+// }
+
 exports.config = {
-  //
-  // ====================
-  // Runner Configuration
-  // ====================
-  // WebdriverIO supports running e2e tests as well as unit and component tests.
   runner: "local",
 
-  //
-  // ==================
-  // Specify Test Files
   // ==================
   // Define which test specs should run. The pattern is relative to the directory
   // of the configuration file being run.
@@ -95,7 +95,7 @@ exports.config = {
   // with `/`, the base url gets prepended, not including the path portion of your baseUrl.
   // If your `url` parameter starts without a scheme or `/` (like `some/path`), the base url
   // gets prepended directly.
-  baseUrl: "https://cypress.vivifyscrum-stage.com/organizations/24611/boards",
+  baseUrl: "https://cypress.vivifyscrum-stage.com",
   //
   // Default timeout for all waitFor* commands.
   waitforTimeout: 10000,
@@ -194,8 +194,11 @@ exports.config = {
    * @param {Array.<String>} specs        List of spec file paths that are to be run
    * @param {Object}         browser      instance of created browser/device session
    */
-  // before: function (capabilities, specs) {
-  // },
+  before: function (capabilities, specs) {
+    browser.addCommand("validatePageUrl", async function (url) {
+      return expect(browser).toHaveUrlContaining(url);
+    });
+  },
   /**
    * Runs before a WebdriverIO command gets executed.
    * @param {String} commandName hook command name

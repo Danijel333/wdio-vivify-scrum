@@ -4,6 +4,7 @@ import board from "../../../pageobjects/board.page";
 describe("Create board smoke test", async () => {
   before("User login", async () => {
     await browser.url("/login");
+    await browser.validatePageUrl("login");
     await loginPage.login({});
   });
   it("VS-BRD-01-Create scrum board", async () => {

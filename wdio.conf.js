@@ -127,7 +127,7 @@ exports.config = {
       {
         outputDir: "allure-results",
         disableWebdriverStepsReporting: true,
-        disableWebdriverScreenshotsReporting: true,
+        disableWebdriverScreenshotsReporting: false,
       },
     ],
   ],
@@ -191,8 +191,9 @@ exports.config = {
    * @param {Object}         browser      instance of created browser/device session
    */
   before: function (capabilities, specs) {
-    browser.addCommand("validatePageUrl", async function (url) {
-      return expect(browser).toHaveUrlContaining(url);
+    browser.addCommand("visitAndValidateUrl", async function (url) {
+      await browser.url(url);
+      expect(browser).toHaveUrlContaining(url);
     });
   },
   /**

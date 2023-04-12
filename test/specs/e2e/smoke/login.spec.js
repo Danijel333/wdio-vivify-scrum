@@ -3,8 +3,7 @@ import loginPage from "../../../pageobjects/login.page";
 
 describe("Login page smoke tests", () => {
   before("Visit login page", async () => {
-    await browser.url("/login");
-    await browser.validatePageUrl("login");
+    await browser.visitAndValidateUrl("/login");
   });
   it("VS-LOG-01-User login with valid credentials", async () => {
     allureReporter.addFeature("Login page - valid submission");

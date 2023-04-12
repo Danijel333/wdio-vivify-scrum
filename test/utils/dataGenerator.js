@@ -1,6 +1,11 @@
 module.exports = {
-  randomString() {
-    return Math.random().toString().substring(2, 16);
+  randomStringGenerator(number = 5) {
+    let randomString = "";
+    for (let i = 0; i < number; i++) {
+      const random = Math.floor(Math.random() * 26);
+      randomString += String.fromCharCode(97 + random);
+    }
+    return randomString;
   },
   randomStringFourDigits() {
     return Math.random().toString().substring(2, 6);

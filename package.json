@@ -19,7 +19,8 @@
     "@wdio/mocha-framework": "^8.7.0",
     "@wdio/spec-reporter": "^8.7.0",
     "chromedriver": "^112.0.0",
-    "wdio-chromedriver-service": "^8.1.1"
+    "wdio-chromedriver-service": "^8.1.1",
+    "wdio-intercept-service": "^4.4.0"
   },
   "dependencies": {
     "allure-commandline": "^2.21.0"

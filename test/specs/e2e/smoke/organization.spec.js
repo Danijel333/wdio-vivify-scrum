@@ -7,10 +7,10 @@ describe("Create organization smoke test", () => {
     await loginPage.login({});
   });
   it("VS-ORG-01-Create organization", async () => {
-    await organizationPage.crateOrganization();
+    await organizationPage.createOrganization("New organization");
   });
   it("VS-ORG-02-Update organization", async () => {
-    await organizationPage.updateOrganization();
+    await organizationPage.updateOrganization("Edited organization");
   });
   it("VS-ORG-03-Delete organization", async () => {
     await browser.refresh();

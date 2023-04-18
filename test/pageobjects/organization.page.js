@@ -52,7 +52,7 @@ class Organization {
     return $('[name="save-btn"]');
   }
 
-  async crateOrganization(organizationName = randomStringGenerator()) {
+  async createOrganization(organizationName) {
     await this.addNewButton.click();
     await this.addNewOrganization.click();
     expect(await this.nextButton).toBeDisabled();
@@ -71,7 +71,7 @@ class Organization {
     await this.nextButton.click();
   }
 
-  async updateOrganization(newOrganizationName = randomStringGenerator()) {
+  async updateOrganization(newOrganizationName) {
     if ((await this.closeBoardInfoModal).isDisplayedInViewport()) {
       await this.closeBoardInfoModal.click();
     }

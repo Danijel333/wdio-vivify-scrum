@@ -1,5 +1,9 @@
 {
     "validationMessages": {
         "confirmAction": "CONFIRM YOUR ACTION"
+    },
+    "constants": {
+        "scrumBoard": "scrum_board",
+        "kanbanBoard": "kanban_board"
     }
 }

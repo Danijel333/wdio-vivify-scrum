@@ -1,5 +1,7 @@
 const allure = require("allure-commandline");
 import fs from "fs";
+import axios from "axios";
+
 // const ENV = process.env.ENV;
 // if (!ENV || !["qa", "dev", "staging"].includes(ENV)) {
 //   console.log(
@@ -191,6 +193,8 @@ exports.config = {
    * @param {Object}         browser      instance of created browser/device session
    */
   before: function (capabilities, specs) {
+    // set axios defaul API base url
+    axios.defaults.baseURL = "https://cypress-api.vivifyscrum-stage.com/api/v2";
     browser.addCommand("visitAndValidateUrl", async function (url) {
       await browser.url(url);
       expect(browser).toHaveUrlContaining(url);

@@ -1,11 +1,11 @@
-import { constants } from "../../data/data.json";
+import { constants, testData } from "../../data/data.json";
 import { randomStringFourDigits } from "../../utils/dataGenerator";
 import axios from "axios";
 import apiValidation from "../../utils/apiValidation";
 
 class Board {
   async createBoard({
-    name = "API created board",
+    name = testData.apiNewBoard,
     type = constants.scrumBoard,
     organizationId,
     statusCode = 201,
@@ -41,7 +41,7 @@ class Board {
   }
   async updateBoard({
     boardId,
-    name = "API updated board",
+    name = testData.apiUpdateBoard,
     description = "API board description",
     code = randomStringFourDigits(),
     statusCode = 200,

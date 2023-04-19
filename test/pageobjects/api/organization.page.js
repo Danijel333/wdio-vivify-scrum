@@ -1,9 +1,10 @@
+import { testData } from "../../data/data.json";
 import axios from "axios";
 import apiValidation from "../../utils/apiValidation";
 
 class Organization {
   async createOrganization({
-    name = "API organization",
+    name = testData.apiNewOrganization,
     statusCode = 201,
     testMessage = "",
     token,
@@ -44,7 +45,7 @@ class Organization {
     });
   }
   async updateOrganization({
-    name = "Updated API organization",
+    name = testData.apiUpdateOrganization,
     organizationId = "",
     statusCode = 200,
     token,

@@ -5,5 +5,11 @@
     "constants": {
         "scrumBoard": "scrum_board",
         "kanbanBoard": "kanban_board"
+    },
+    "testData": {
+        "apiNewOrganization": "API organization",
+        "apiUpdateOrganization": "Updated API organization",
+        "apiNewBoard": "API created board",
+        "apiUpdateBoard": "API updated board"
     }
 }

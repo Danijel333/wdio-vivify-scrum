@@ -1,6 +1,4 @@
 import { validationMessages } from "../data/data.json";
-import { randomStringGenerator } from "../utils/dataGenerator";
-
 class Organization {
   get addNewButton() {
     return $(
@@ -69,6 +67,9 @@ class Organization {
     );
     await this.uploadFileButton.click();
     await this.nextButton.click();
+    // await browser.execute(async () => {
+
+    // });
   }
 
   async updateOrganization(newOrganizationName) {

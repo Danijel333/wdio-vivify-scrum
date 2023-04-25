@@ -52,6 +52,7 @@ exports.config = {
       // excludeDriverLogs: ['*'], // pass '*' to exclude all driver session logs
       // excludeDriverLogs: ['bugreport', 'server'],
     },
+    { maxInstances: 5, browserName: "firefox", acceptInsecureCerts: true },
   ],
   // Level of logging verbosity: trace | debug | info | warn | error | silent
   logLevel: "error",
@@ -89,7 +90,7 @@ exports.config = {
   // Services take over a specific job you don't want to take care of. They enhance
   // your test setup with almost no effort. Unlike plugins, they don't add new
   // commands. Instead, they hook themselves up into the test process.
-  services: ["chromedriver", "intercept"],
+  services: ["chromedriver", "geckodriver", "intercept"],
 
   // Framework you want to run your specs with.
   // The following are supported: Mocha, Jasmine, and Cucumber

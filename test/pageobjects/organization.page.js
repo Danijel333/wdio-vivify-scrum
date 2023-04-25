@@ -56,20 +56,18 @@ class Organization {
     expect(await this.nextButton).toBeDisabled();
     await this.organizationNameInput.setValue(organizationName);
     await this.nextButton.click();
-    await browser.execute(() => {
-      document
-        .getElementsByName("file")[0]
-        .setAttribute("style", "display: block");
-    });
-    (await this.fileUploadArea).waitForDisplayed();
-    await this.fileUploadArea.setValue(
-      await browser.uploadFile("test/data/fileToUpload.jpeg")
-    );
-    await this.uploadFileButton.click();
-    await this.nextButton.click();
-    // await browser.execute(async () => {
-
+    // Commented because firefox doesn't support browser.uploadFile
+    // await browser.execute(() => {
+    //   document
+    //     .getElementsByName("file")[0]
+    //     .setAttribute("style", "display: block");
     // });
+    // (await this.fileUploadArea).waitForDisplayed();
+    // await this.fileUploadArea.setValue(
+    //   await browser.uploadFile("test/data/fileToUpload.jpeg")
+    // );
+    // await this.uploadFileButton.click();
+    await this.nextButton.click();
   }
 
   async updateOrganization(newOrganizationName) {

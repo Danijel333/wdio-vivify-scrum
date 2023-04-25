@@ -16,6 +16,17 @@ exports.config = {
   exclude: [
     // 'path/to/excluded/files'
   ],
+  suites: {
+    smokeUI: [
+      "test/specs/e2e/smoke/login.spec.js",
+      "test/specs/e2e/smoke/organization.spec.js",
+    ],
+    smokeAPI: [
+      "test/specs/api/loginApi.spec.js",
+      "test/specs/api/organizationApi.spec.js",
+      "test/specs/api/boardApi.spec.js",
+    ],
+  },
   //
   // ============
   // Capabilities

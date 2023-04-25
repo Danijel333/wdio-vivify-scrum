@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "wdio": "wdio run ./wdio.conf.js"
+    "wdio": "wdio run ./wdio.conf.js",
+    "smoke-ui-suite": "npx wdio --suite smokeUI",
+    "smoke-api-suite": "npx wdio --suite smokeAPI"
   },
   "author": "Danijel Janjic",
   "license": "ISC",
